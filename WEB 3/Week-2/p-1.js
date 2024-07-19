@@ -13,57 +13,57 @@ const { resolve } = require("path");
 
 // This is the callback fun demo and
 
-// function square(n) {
-//   return n * n;
-// }
+function square(n) {
+  return n * n;
+}
 
-// function cude(n) {
-//   return n * n * n;
-// }
+function cude(n) {
+  return n * n * n;
+}
 
-// function quard(n) {
-//   return n * n * n * n;
-// }
+function quard(n) {
+  return n * n * n * n;
+}
 
-// sum = (a, b, fn) => {
-//   return fn(a) + fn(b);
-// };
+sum = (a, b, fn) => {
+  return fn(a) + fn(b);
+};
 
-// let ans = sum(1, 2, quard);
-// console.log(ans);
+let ans = sum(1, 2, quard);
+console.log(ans);
 
 // ! ---------------------------------------
 
 // ! Async Functions:
 
-// sum = (a, b) => {
-//   console.log(a + b);
-// };
+sum = (a, b) => {
+  console.log(a + b);
+};
 
 // Best Example of Async Fun is setTimeout
 
-// printTimeout = () => {
-//   console.log("Time Out is Called");
-// };
-// console.log("SetTimeOut is not called");
-// setTimeout(printTimeout, 3000);
-// console.log("SetTime Out Is Finished");
+printTimeout = () => {
+  console.log("Time Out is Called");
+};
+console.log("SetTimeOut is not called");
+setTimeout(printTimeout, 3000);
+console.log("SetTime Out Is Finished");
 
-// const fs = require("fs");
+const fs = require("fs");
 
-// fs.readFile("a.txt", "utf-8", (err, data) => {
-//   console.log(data);
-// });
+fs.readFile("a.txt", "utf-8", (err, data) => {
+  console.log(data);
+});
 
 // * Second Demo Of Async fn
 
-// function myAsync(fn, duration) {
-//   setTimeout(fn, duration);
-// }
+function myAsync(fn, duration) {
+  setTimeout(fn, duration);
+}
 
-// myAsync(function printSomething() {
-//   console.log("Here Is the My Own fn");
-// }, 2000);
+myAsync(function printSomething() {
+  console.log("Here Is the My Own fn");
+}, 2000);
 
 // * Callback Hell In js
 /*
@@ -113,39 +113,37 @@ const { resolve } = require("path");
 
 // One ex of promise
 
-// const printfn = (duration) => {
-//   const p = new Promise(function (resolve) {
-//     setTimeout(() => {
-//       resolve();
-//     }, duration);
-//   });
-//   return p;
-// };
+const printfn = (duration) => {
+  const p = new Promise(function (resolve) {
+    setTimeout(() => {
+      resolve();
+    }, duration);
+  });
+  return p;
+};
 
-// const ans = printfn(3000);
-// ans.then(() => {
-//   console.log("Promise resolved...");
-// });
-// console.log(ans);
+const ans1 = printfn(3000);
+ans.then(() => {
+  console.log("Promise resolved...");
+});
+console.log(ans1);
 
-// function countSum(duration) {
-//   const p = new Promise((resolve) => {
-//     setTimeout(() => {
-//       resolve();
-//     }, duration * 1000);
-//   });
-//   return p;
-// }
+function countSum(duration) {
+  const p = new Promise((resolve) => {
+    setTimeout(() => {
+      resolve();
+    }, duration * 1000);
+  });
+  return p;
+}
 
-// const ans = countSum(2);
-// ans.then(() => {
-//   function printSum(a, b) {
-//     console.log("Promise Resolved...");
-//     console.log(a + b);
-//   }
-//   printSum(3, 4);
-// });
+const ans2 = countSum(2);
+ans.then(() => {
+  function printSum(a, b) {
+    console.log("Promise Resolved...");
+    console.log(a + b);
+  }
+  printSum(3, 4);
+});
 
-// console.log(ans);
-
-
+console.log(ans2);

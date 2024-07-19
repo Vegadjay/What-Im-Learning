@@ -40,8 +40,6 @@ fs.appendFile("Week-2Try.txt", "Add content here", (err) => {
 });
 
 // ! File system using js
-
-const content = "This is the text and this is write in the file";
 fs.writeFile("try.txt", content, (err, data) => {
   if (err) {
     console.error(err);
