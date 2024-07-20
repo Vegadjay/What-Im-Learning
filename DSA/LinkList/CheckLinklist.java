@@ -6,22 +6,34 @@
  */
 
 public class CheckLinklist {
-    //  Here take two pointers for tracvece whole list.
-    //  Check in while condition and where fast and slow is same than we return list is cycle.    
-    Node fast = first;
-    Node slow = first;
+    // Here take two pointers for tracvece whole list.
+    // Check in while condition and where fast and slow is same than we return list
+    // is cycle.
 
-    while(first!=null && first.link!=null) {
-        slow += 1;
-        fast += 2;
-        if(fast == slow) {
-            System.err.println("List is cycle");
+    class Node() {
+        int data;
+        Node link;
+        public Node(int data) {
+            this.data = data;
+            this.link = null;
+        }
+    }
+    public Node first = null;
+    public boolean isCycle() {
+        Node fast = first;
+        Node slow = first;
+
+        while (first != null && first.link != null) {
+            slow = slow.link;
+            fast = fast.link.link;
+
+            if (fast == slow) {
+                return true;
+            }
         }
         return false;
     }
-
-
     public static void main(String[] args) {
-
+        
     }
 }
