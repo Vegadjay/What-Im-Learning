@@ -10,10 +10,11 @@ public class CheckLinklist {
     // Check in while condition and where fast and slow is same than we return list
     // is cycle.
 
-    class Node() {
+    class Node {
         int data;
         Node link;
-        public Node(int data) {
+
+        Node(int data) {
             this.data = data;
             this.link = null;
         }
