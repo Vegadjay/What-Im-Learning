@@ -79,6 +79,40 @@ public class CircularListInserAtFirst {
 
     }
 
+    public void deleteNode(int data) {
+        Node pred = null;
+        Node save = first;
+
+        if (first == null) {
+            System.out.println("List is empty.");
+            return;
+        }
+
+        if (first.data == data) {
+            first = first.link;
+            if (first == null) {
+                last = null;
+            }
+            return;
+        }
+
+        while (save != null && save.data != data) {
+            pred = save;
+            save = save.link;
+        }
+
+        if (save == null) {
+            System.out.println("Node is not found.");
+            return;
+        }
+
+        pred.link = save.link;
+
+        if (save == last) {
+            last = pred;
+        }
+    }
+
     public static void main(String[] args) {
         CircularListInserAtFirst list = new CircularListInserAtFirst();
         list.insertAtFirst(10);
@@ -89,6 +123,6 @@ public class CircularListInserAtFirst {
         list.inserAtlast(60);
         list.inserAtlast(70);
 
-        list.inserAtOrder(40);  
+        list.inserAtOrder(40);
     }
 }
