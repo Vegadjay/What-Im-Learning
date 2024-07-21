@@ -25,6 +25,7 @@ app.get("/", (req, res) => {
 app.get("/second", (req, res) => {});
 // Here also you use "use" function with some unique function
 // ! Note here inside the use method use add fn than it's take 4 input as a args
+// ! this is the special type of middleware this is called as error handling middleware....
 app.use((err, res, req, next) => {
   res.json({
     msg: "Something Went Wrong",
