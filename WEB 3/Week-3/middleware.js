@@ -13,7 +13,7 @@ function calcereq(req, res, next) {
 }
 // here i am using app.use this is the run middleware with any place without writing function inside route
 
-app.use(calcereq);
+app.use(express());
 // app.use("express.json()")
 app.get("/", (req, res) => {
   if (rq == 4) {
@@ -23,5 +23,12 @@ app.get("/", (req, res) => {
   }
 });
 app.get("/second", (req, res) => {});
+// Here also you use "use" function with some unique function
+// ! Note here inside the use method use add fn than it's take 4 input as a args
+app.use((err, res, req, next) => {
+  res.json({
+    msg: "Something Went Wrong",
+  });
+});
 
 app.listen(3000);
