@@ -11,14 +11,17 @@ function calcereq(req, res, next) {
   next();
   console.log(rq);
 }
+// here i am using app.use this is the run middleware with any place without writing function inside route
 
-app.get("/", calcereq, (req, res) => {
+app.use(calcereq);
+// app.use("express.json()")
+app.get("/", (req, res) => {
   if (rq == 4) {
     res.send("Limit is done!!");
   } else {
     res.send("Add one");
   }
 });
-app.get("/second", calcereq, (req, res) => {});
+app.get("/second", (req, res) => {});
 
 app.listen(3000);
