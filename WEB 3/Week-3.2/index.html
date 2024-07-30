@@ -11,15 +11,8 @@
   <script>
     const img = document.getElementsByTagName("img");
     function fnCall() {
-      // const api = fetch(
-      //   "https://66776929145714a1bd74acc2.mockapi.io/api/Student"
-      // ).then(function (response) {
-      //   const res = response.json().then(function (realData) {
-      //     const imgPath = realData[123].avatar;
-      //     document.write(`<img src=${imgPath} alt="abc" />`);
-      //   });
-      // });
 
+      // this method is use before ES6 is intoduce.
       const api = fetch("https://66776929145714a1bd74acc2.mockapi.io/api/Student").then(function(response) {
         console.log("Response is",response)
         const data = response.json().then(function(realData) {
@@ -28,7 +21,7 @@
       })
     }
 
-    // Now making this easy.
+    // ES6 Method
 
     async function gettingAlldata() {
       const response = await  fetch(
