@@ -1,26 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <button onclick="fnCall()">Click Me</button>
-  <img src="" alt="abc" />
-  <script>
-    const img = document.getElementsByTagName("img");
-    function fnCall() {
-      console.log(img);
-      const api = fetch(
-        "https://66776929145714a1bd74acc2.mockapi.io/api/Student"
-      ).then(function (response) {
-        const res = response.json().then(function (realData) {
-          const imgPath = realData[123].avatar;
-          document.write(`<img src=${imgPath} alt="abc" />`);
+<html>
+  <body>
+    <button onclick="fnCall()">Click Me</button>
+    <img src="" alt="abc" />
+    <script>
+      const img = document.getElementsByTagName("img");
+      function fnCall() {
+        console.log(img);
+        const api = fetch(
+          "https://66776929145714a1bd74acc2.mockapi.io/api/Student"
+        ).then(function (response) {
+          const res = response.json().then(function (realData) {
+            const imgPath = realData[123].avatar;
+            document.write(`<img src=${imgPath} alt="abc" />`);
+          });
         });
-      });
-    }
-  </script>
-</body>
+      }
+    </script>
+  </body>
 </html>
