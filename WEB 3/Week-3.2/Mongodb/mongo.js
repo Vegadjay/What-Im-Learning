@@ -17,7 +17,7 @@ const app = express();
 app.use(express.json());
 
 function userExists(username, password) {
-  // should check in the database
+  
 }
 
 app.post("/signin", async function (req, res) {

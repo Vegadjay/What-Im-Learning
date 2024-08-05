@@ -1,0 +1,19 @@
+<html>
+    <script>    
+        function addEvent() {
+            const Email = document.getElementById("email").value;
+            const Password = document.getElementById("password").value;
+            fetch(`http://localhost:3000/signin?e=${Email}?p=${Password}`);
+        }
+    </script>
+    <body>
+        <form action="index2.html">
+        <span>Email: </span>
+        <input type="text" id="email">
+        <span>Password: </span>
+        <input type="text" id="password">
+        <span>Login</span>
+        <input type="submit" id="Password" onclick="addEvent()">
+        </form>
+    </body>
+</html>
