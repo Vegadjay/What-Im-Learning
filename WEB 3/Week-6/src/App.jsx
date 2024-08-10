@@ -1,28 +1,45 @@
-import { useDebugValue, useEffect, useMemo, useState } from "react";
-import axios from "axios";
-
+import { useContext, useState } from "react";
+import { CountContext } from './componants/Context'
 import "./App.css";
 
 function App() {
-  const [count,setCount] = useState(0);
-  const [inputvalue,setInputvalue] = useState(0);
-  
-  let count1 = useMemo(()=>{
-    console.log("memo is called");
-    let finalcount = 0;
-    for(let i = 0;i<inputvalue;i++) {
-        finalcount+=i;
-    }
-    return finalcount;
-  },[inputvalue])
+  const [count, setCount] = useState(0);
+
   return (
     <div>
-      <button onClick={()=>setCount((count)=>count+1)}>count: {count}</button>
-      <input type="text" onChange={(event)=>{
-        setInputvalue(event.target.value)
-      }} />
-      <p>{count1}</p>
+        <CountContext.Provider value={count}>
+        <Count setCount={setCount}/>
+        </CountContext.Provider>
     </div>
   );
 }
+function Count({setCount}) {
+  return <div>
+    <CounterRender/>
+    <Buttons setCount={setCount}/>
+    </div>
+  
+}
+
+function CounterRender() {
+  const count = useContext(CountContext);
+  return <div>
+    {count}
+  </div>
+}
+
+
+function Buttons({setCount}) {
+  const count = useContext(CountContext)
+  return <div>
+  <button onClick={()=>{
+    setCount(count + 1);  
+  }}>increase</button>
+  <button onClick={()=>{
+    setCount(count - 1);
+  }}>decrese</button>
+  </div>
+}
+
 export default App;
+ 
