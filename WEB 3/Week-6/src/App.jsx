@@ -1,47 +1,27 @@
-import { useDebugValue, useEffect, useState } from "react";
+import { useDebugValue, useEffect, useMemo, useState } from "react";
 import axios from "axios";
 
 import "./App.css";
 
 function App() {
-  const [count , setCount] = useState(1);
+  const [count,setCount] = useState(0);
+  const [inputvalue,setInputvalue] = useState(0);
   
-  return (
-    <>
-      <button onClick={()=> {
-        setCount(1);
-      }}>1</button>
-      <button onClick={() => {
-        setCount(2);
-      }}>2</button>
-      <button onClick={()=> {
-        setCount(3);
-      }}>3</button>
-      <button onClick={()=> {
-        setCount(4);
-      }}>4</button>
-
-      <Todo id={count} />
-    </>
-  );
-}
-
-function Todo(props) {
-  const [todo, setTodo] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get(`https://sum-server.100xdevs.com/todo?id=${props.id}`)
-      .then((response) => {
-        setTodo(response.data.todo);
-        console.log(response.data.todo);
-      });
-  }, [props.id]);
-
+  let count1 = useMemo(()=>{
+    console.log("memo is called");
+    let finalcount = 0;
+    for(let i = 0;i<inputvalue;i++) {
+        finalcount+=i;
+    }
+    return finalcount;
+  },[inputvalue])
   return (
     <div>
-      <h1>{todo.title}</h1>
-      <h2>{todo.description}</h2>
+      <button onClick={()=>setCount((count)=>count+1)}>count: {count}</button>
+      <input type="text" onChange={(event)=>{
+        setInputvalue(event.target.value)
+      }} />
+      <p>{count1}</p>
     </div>
   );
 }
