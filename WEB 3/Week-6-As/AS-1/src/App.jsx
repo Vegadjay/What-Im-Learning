@@ -1,25 +1,31 @@
 import { useState } from 'react';
 import './App.css';
+import axios from 'axios';
 
 function App() {
   const [para1, setPara1] = useState("");
-  const [inputValue, setInputValue] = useState(""); 
+  const [inputValue, setInputValue] = useState(0);
+
+  function setValue(event) {
+    var data = event.target.value;
+    console.log(data)
+    setInputValue(event.target.value);
+  }
 
   function paraGenerate() {
-    fetch("http://localhost:3000/", 
+    axios("http://localhost:3000/",
     {
       method: "POST",
-      body: JSON.stringify({ para: inputValue }),
+      data: JSON.stringify({ max: inputValue }),
       headers: {
-        "Content-Type": "application/json", 
+        "Content-Type": "application/json",
       },
     })
     .then(async (res) => {
-      if (res.ok) { 
-        const data = await res.json();
+      if (res.status === 200) { 
+        const data = await res.data; 
         console.log('Received data:', data); 
         setPara1(data.paragraph || data); 
-
       } else {
         console.error('Error:', res.statusText); 
       }
@@ -34,8 +40,8 @@ function App() {
       <input 
         type="text" 
         placeholder='Enter Length of word' 
-        value={inputValue} 
-        onChange={(e) => setInputValue(e.target.value)} 
+        id='inputNumber'
+        onChange={setValue}
       />
       <button onClick={paraGenerate}>Click here</button>
       <span>{para1}</span>

@@ -6,7 +6,7 @@ const app = express();
 app.use(cors({}));
 app.use(bodyParser.json());
 app.post('/',(req,res)=>{
-    const {max} = req.body;
+    var max = req.body.max;
     console.log(max);
     res.send(randomParagraph({min: 0, max: max}))
 })
