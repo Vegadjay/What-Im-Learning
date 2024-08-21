@@ -1,30 +1,28 @@
 import { createContext, useContext, useState } from "react";
 import "./App.css";
+import { countAtmo } from "./store/atmos/count";
 const CountContext = createContext();
-
+// useRecoil , useRecoilValue - give just value, useSetRecoilValue - This is give to update the variable.
 function App() {
-  const [count, setCount] = useState(0);
 
   return (
     <div>
-      <CountContext.Provider value={count}>
-        <Count setCount={setCount} />
-      </CountContext.Provider>
+        <Count />
     </div>
   );
 }
 
-function Count({ setCount }) {
+function Count() {
   return (
     <div>
       <CounterRender />
-      <Buttons setCount={setCount} />
+      <Buttons />
     </div>
   );
 }
 
 function CounterRender() {
-  const count = useContext(CountContext);
+  const count = useRecoilValue(countAtmo);
   return <div>{count}</div>;
 }
 
