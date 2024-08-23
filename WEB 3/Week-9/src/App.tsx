@@ -4,7 +4,7 @@ function App() {
   
   return (
     <>
-      
+      <button>{isTrue ? "True" : "False"}</button>
     </>
   )
 }
