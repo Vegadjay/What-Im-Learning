@@ -1,10 +1,81 @@
-var checkUser = /** @class */ (function () {
-    function checkUser(f, l, a) {
-        this.firstname = f;
-        this.latsname = l;
-        this.age = a;
-    }
-    return checkUser;
-}());
-var user12 = new checkUser("jay", "vegad", 12);
-console.log(user12.firstname);
+// The diff between interface and type is interface is extand by the class and type does not
+// type is extend using & like this
+/*
+type PersonType = {
+    firstname: string;
+};
+
+type EmployeeType = PersonType & {
+    employeeId: number;
+};
+
+type studentId = string | number
+
+
+
+// also you can make this
+
+// Union and Intersection types with `type`
+type StringOrNumber = string | number;
+
+type Name = {
+    firstname: string;
+};
+
+type EmployeeWithAge = Name & {
+    age: number;
+};
+
+let value: string | number;
+
+value = "Jay" // valid
+value = 30 // valid;
+value = true // invalid
+
+
+*/
+// type user = {
+//     firstname: string;
+//     latsname: string;
+//     age: number
+// }
+// interface user1 {
+//     firstname: string;
+//     latsname: string;
+//     age: number
+// }
+// class checkUser implements user1 {
+//     firstname: string;
+//     latsname: string;
+//     age: number;
+//     constructor(f: string, l: string, a:number) {
+//         this.firstname = f;
+//         this.latsname = l;
+//         this.age = a;
+//     }
+//     checkAge(age: number) {
+//         if(age > 18) {
+//             console.log("User is valid for driving");
+//         }
+//         else {
+//             console.log("USer is not valid");
+//         }
+//     }
+// }
+// const e = new checkUser("jay" , "Vegad" , 18);
+// e.checkAge(19);
+// Here you can make Type and use it using gate like or,and  many other
+// type Employee = {
+//   name: string;
+//   age: number;
+// };
+// type Person = {
+//   name: string;
+//   salary: number;
+// };
+// type EmployeeOrPerson = Employee & Person;
+// const t: EmployeeOrPerson = {
+//   name: "Yogi",
+//   age: 10,
+//   salary: 2000,
+// };
