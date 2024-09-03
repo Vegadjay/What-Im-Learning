@@ -1,45 +1,15 @@
-type KeyInput = "up" | "down" | "right" | "left";
+const app = express();
 
-function doSomething(keyPressed: KeyInput)  {
-    if(keyPressed == "up") {
-        console.log("up arrow is trigged")
-    }
-    // do something
+enum ResponseStatus {
+    Success = 200,
+    NotFound = 404,
+    Error = 500
 }
 
-doSomething("up");
-// We can't add this no exists value in function call because this is not define in KeyInput
-doSomething("lakds");
-
-
-// while you doing this instand of doing this make one enum and add all the values into that enum like this
-
-
-enum Direction {
-    // also you can change the value of this up down and so all like this
-    Up = 'up',
-    Down = 'down',
-    right = "right",
-    left = "left"
-
-    // Up = "up";
-    // Down = "down";
-    // Right = "right";
-    // Left = "left";
-    
-}
-
-// and now do this
-
-function doingSomething( keyPressed : Direction) {
-    if(keyPressed == Direction.Up) {
-        // do something
+app.get("/", (req, res) => {
+    if (!req.query.userId) {
+			res.status(ResponseStatus.Error).json({})
     }
-    else if ( keyPressed = Direction.Down) {
-        // do something
-    }
-    // doing this repetedly
-}
-
-console.log(Direction.Up);
-console.log(Direction.Down);
+    // and so on...
+		res.status(ResponseStatus.Success).json({});
+})

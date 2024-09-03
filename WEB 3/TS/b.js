@@ -5,6 +5,7 @@ function doSomething(keyPressed) {
     // do something
 }
 doSomething("up");
+// We can't add this no exists value in function call because this is not define in KeyInput
 // doSomething("lakds");
 // while you doing this instand of doing this make one enum and add all the values into that enum like this
 var Direction;
@@ -12,8 +13,8 @@ var Direction;
     // also you can change the value of this up down and so all like this
     Direction["Up"] = "up";
     Direction["Down"] = "down";
-    Direction[Direction["Right"] = void 0] = "Right";
-    Direction[Direction["Left"] = void 0] = "Left";
+    Direction["right"] = "right";
+    Direction["left"] = "left";
     // Up = "up";
     // Down = "down";
     // Right = "right";
