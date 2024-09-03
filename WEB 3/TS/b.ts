@@ -8,7 +8,8 @@ function doSomething(keyPressed: KeyInput)  {
 }
 
 doSomething("up");
-// doSomething("lakds");
+// We can't add this no exists value in function call because this is not define in KeyInput
+doSomething("lakds");
 
 
 // while you doing this instand of doing this make one enum and add all the values into that enum like this
