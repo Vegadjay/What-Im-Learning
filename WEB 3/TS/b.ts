@@ -1,15 +1,21 @@
-const app = express();
-
-enum ResponseStatus {
-    Success = 200,
-    NotFound = 404,
-    Error = 500
+export function add(x: number, y: number): number {
+    return x + y;
 }
 
-app.get("/", (req, res) => {
-    if (!req.query.userId) {
-			res.status(ResponseStatus.Error).json({})
+export function subtract(x: number, y: number): number {
+    return x - y;
+}
+import { add } from "./math"
+
+add(1, 2)
+
+export default class Calculator {
+    add(x: number, y: number): number {
+        return x + y;
     }
-    // and so on...
-		res.status(ResponseStatus.Success).json({});
-})
+}
+
+import Calculator from './Calculator';
+
+const calc = new Calculator();
+console.log(calc.add(10, 5));
