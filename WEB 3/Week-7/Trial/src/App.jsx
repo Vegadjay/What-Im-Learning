@@ -1,6 +1,8 @@
 import { useContext, useState } from 'react'
 import './App.css'
 import { CountContext } from './context';
+
+const name = "Jay vegad"
 function App() {
   const [count, setCount] = useState(0);
   return (
