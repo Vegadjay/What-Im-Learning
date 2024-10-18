@@ -1,3 +1,4 @@
+"use strict";
 // First Way to make that
 function doSomething1(keyPressed) {
     // do something;
@@ -57,5 +58,19 @@ doSomething(Direction.Up);
 ->    also we print any string or any other values to
 ->    while we assign one to string value that we must assign string value to all of the element otherwise
         ts gives as error like ts is not understand what we want..
-        
+  
+            enum ResponseStatus {
+                Success = 200,
+                NotFound = 404,
+                Error = 500
+            }
+
+            app.get("/', (req, res) => {
+                if (!req.query.userId) {
+                    res.status(ResponseStatus.Error).json({})
+                 }
+            // and so on...
+                res.status(ResponseStatus.Success).json({});
+            })
+
 */

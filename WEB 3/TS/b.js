@@ -1,8 +1,20 @@
-function getFirstElement(args) {
-    for (var i = 0; i < args.length; i++) {
-        console.log(args[i]);
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.subtract = exports.add = void 0;
+function add(x, y) {
+    return x + y;
+}
+exports.add = add;
+function subtract(x, y) {
+    return x - y;
+}
+exports.subtract = subtract;
+add(1, 2);
+class Calculator {
+    add(x, y) {
+        return x + y;
     }
 }
-var el = getFirstElement(["Jay vegad"]);
-var el2 = getFirstElement([1, 2, 3, 4, 5,]);
-console.log(el2);
+exports.default = Calculator;
+const calc = new Calculator();
+console.log(calc.add(10, 5));
