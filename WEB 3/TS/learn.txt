@@ -1,0 +1,18 @@
+****    18-oct    ****
+
+
+    -> Today I have learn ts.config file what is ts config and how it is work
+    we make small changes like root dir or version of the ts and other like 
+    compile file path that all we can changes using ts config file
+
+    -> Also that file contain so much content like paths,modules and many more
+        (rootDir: './src')
+        (outerDir: './dist')
+
+    -> Also we change implicentlyAny or not while we change this ts can not showes 
+    error to us like we have function and function contains some parameter and 
+    that parameter have any type like string, interger or any
+        (noImplicitAny: false)
+
+    -> Also we can remove comments like comments is contains by ts file than in tsconfig
+    we can change removeComments:true;
