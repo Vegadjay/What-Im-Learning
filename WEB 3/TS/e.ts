@@ -5,7 +5,7 @@
     We can make one constructor as well for making (While impliment interface as a classs
         than we need to make constructor is good 
     )
-
+    Inteface is like a object and that is make our work more easy
 */
 
 interface Person {
