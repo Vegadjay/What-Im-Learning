@@ -1,4 +1,3 @@
-"use strict";
 // The diff between interface and type is interface is extand by the class and type does not
 // type is extend using & like this
 /*
