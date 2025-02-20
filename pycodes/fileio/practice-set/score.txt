@@ -1,0 +1,4 @@
+Computer wins: 1
+Computer wins: 1
+Tie: 1
+You win: 1
