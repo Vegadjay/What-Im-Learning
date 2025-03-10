@@ -1,2 +1,5 @@
 # What-Im-Learning
-This is the new repo for knowing for what I am learning to day to day life
+<hr />
+Such a genius man and inspiration for me
+Really love this interview
+https://www.youtube.com/watch?v=o8NPllzkFhE
